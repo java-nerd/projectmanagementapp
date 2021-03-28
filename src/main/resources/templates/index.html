@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org" lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>My First Page</title>
+	</head>
+	<body>
+		<form th:action = "create" method = "post" th:object = "${user}">
+			<label> First Name
+				<input type = "text" th:field = "${user.firstName}"></label>
+			<label> Age
+				<input type = "number" th:field = "${user.age}"></label>
+			<input type = "submit" value = "Submit">
+			<input type = "reset" value = "Reset">
+		</form>
+	</body>
+</html>
