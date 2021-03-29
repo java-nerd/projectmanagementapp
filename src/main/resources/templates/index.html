@@ -2,16 +2,24 @@
 <html xmlns:th = "http://www.thymeleaf.org" lang = "en">
 	<head>
 		<meta charset = "UTF-8">
-		<title>My First Page</title>
+		<title>Create a Project</title>
 	</head>
 	<body>
-		<form th:action = "create" method = "post" th:object = "${user}">
-			<label> First Name
-				<input type = "text" th:field = "${user.firstName}"></label>
-			<label> Age
-				<input type = "number" th:field = "${user.age}"></label>
+		<form th:action = "create" method = "post" th:object = "${project}">
+			<label>Project Name
+				<input type = "text" th:field = "${project.name}">
+			</label>
+			<label>Project State
+				<select th:field = "${project.state}">
+					<option th:value = "NOTSTARTED">Not Started</option>
+					<option th:value = "STARTED">Started</option>
+					<option th:value = "COMPLETED">Completed</option>
+				</select>
+			</label>
+			<label> Project Description
+				<textarea th:field = "${project.description}"></textarea>
+			</label>
 			<input type = "submit" value = "Submit">
-			<input type = "reset" value = "Reset">
 		</form>
 	</body>
 </html>

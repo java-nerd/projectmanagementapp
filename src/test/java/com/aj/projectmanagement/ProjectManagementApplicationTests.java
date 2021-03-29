@@ -1,4 +1,4 @@
-package com.aj.projectmanagement.projectmanagement;
+package com.aj.projectmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
