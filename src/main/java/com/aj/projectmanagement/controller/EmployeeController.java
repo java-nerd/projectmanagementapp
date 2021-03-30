@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("employees")
 public class EmployeeController {
@@ -20,10 +22,17 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
+	@GetMapping
+	public String allProjects(Model model) {
+		final List<Employee> all = employeeService.findAll();
+		model.addAttribute("employees", all);
+		return "employees/allemployees";
+	}
+
 	@GetMapping(value = "/new")
 	public String sayHello(Model model) {
 		model.addAttribute("employee", new Employee());
-		return "employee";
+		return "employees/employee";
 	}
 
 	@PostMapping(value = "/create")

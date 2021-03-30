@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org" lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Layout</title>
+		<link rel = "stylesheet" th:href = "@{/css/utils.css}">
+	</head>
+	<body>
+		<nav th:fragment = "navbar">
+			<div class = "navbar">
+				<h1>Project Manager</h1>
+				<ul>
+					<li><a href = "/">Home</a></li>
+					<li><a href = "/employees">Employees</a></li>
+					<li><a href = "/projects">Projects</a></li>
+				</ul>
+			</div>
+		</nav>
+		<footer th:fragment = "footer">
+			<div class = "footer">
+				<p>&copy;All Rights Reserved, Ajay Kumar</p>
+			</div>
+		</footer>
+	</body>
+</html>

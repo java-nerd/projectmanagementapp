@@ -5,6 +5,7 @@
 		<title>Create a Project</title>
 	</head>
 	<body>
+		<nav th:replace = "layouts :: navbar"></nav>
 		<form th:action = "create" method = "post" th:object = "${project}">
 			<label>Project Name
 				<input type = "text" th:field = "${project.name}">

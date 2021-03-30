@@ -29,6 +29,6 @@ public class HomeController {
 		model.addAttribute("employees", employees);
 		final List<Project> projects = projectService.findAll();
 		model.addAttribute("projects", projects);
-		return "homepage";
+		return "home/homepage";
 	}
 }
