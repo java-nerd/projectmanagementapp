@@ -1,14 +1,38 @@
-nav .navbar a {
+.flexbox a {
     text-decoration: none;
     text-align: center;
     color: white;
+    display: block;
+    padding: 10px 10px;
 }
 
-nav .navbar {
+.flexbox a:hover {
+    cursor: pointer;
+    background-color: cadetblue;
+    color: white;
+}
+
+.flexbox {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 200px;
-    max-width: 100%;
-    background-color: black;
+    justify-content: space-between;
+    height: 50px;
+    max-width: 1200px;
 }
+
+.container {
+    background-color: #444;
+    color: whitesmoke;
+    max-width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    padding: 10px 10px;
+}
+
