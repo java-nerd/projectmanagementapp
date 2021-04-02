@@ -3,27 +3,31 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>All Projects</title>
+		<link th:href = "@{/css/utils.css}" rel = "stylesheet">
 	</head>
 	<body>
 		<nav th:replace = "layouts :: navbar"></nav>
 		<div class = "projects">
 			<h2>All Projects</h2>
-			<table>
-				<thead>
-					<tr>
-						<td>Project Name</td>
-						<td>Project Description</td>
-						<td>Project State</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each = "project : ${projects}">
-						<td th:text = "${project.name}"></td>
-						<td th:text = "${project.description}"></td>
-						<td th:text = "${project.state.name()}"></td>
-					</tr>
-				</tbody>
-			</table>
+			<div class = "table">
+				<table>
+					<thead>
+						<tr>
+							<td>Project Name</td>
+							<td>Project Description</td>
+							<td>Project State</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each = "project : ${projects}">
+							<td th:text = "${project.name}"></td>
+							<td th:text = "${project.description}"></td>
+							<td th:text = "${project.state.name()}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
+		<footer th:replace = "layouts :: footer"></footer>
 	</body>
 </html>

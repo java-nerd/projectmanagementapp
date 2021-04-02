@@ -1,3 +1,14 @@
+@import "table.css";
+
+:root {
+    --main-color: grey;
+}
+
+.dimensions {
+    height: 50px;
+    max-width: 1200px;
+}
+
 .flexbox a {
     text-decoration: none;
     text-align: center;
@@ -8,7 +19,7 @@
 
 .flexbox a:hover {
     cursor: pointer;
-    background-color: cadetblue;
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -16,11 +27,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    max-width: 1200px;
 }
 
-.container {
+.container, .footer {
     background-color: #444;
     color: whitesmoke;
     max-width: 100%;
@@ -34,5 +43,20 @@
 
 .logo {
     padding: 10px 10px;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    color: white;
 }
 
+.footer p {
+    text-align: center;
+    padding: 10px;
+}
+
+.all-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

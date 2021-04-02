@@ -7,44 +7,50 @@
 	</head>
 	<body>
 		<nav th:replace = "layouts :: navbar"></nav>
-		<div class = "projects">
-			<h2>All Projects</h2>
-			<table>
-				<thead>
-					<tr>
-						<td>Project Name</td>
-						<td>Project Description</td>
-						<td>Project State</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each = "project : ${projects}">
-						<td th:text = "${project.name}"></td>
-						<td th:text = "${project.description}"></td>
-						<td th:text = "${project.state.name()}"></td>
-					</tr>
-				</tbody>
-			</table>
+		<div class = "all-container">
+			<div class = "projects">
+				<div class = "table-title">
+					<h3>All Projects</h3>
+				</div>
+				<table class = "table-fill">
+					<thead>
+						<tr>
+							<td>Project Name</td>
+							<td>Project Description</td>
+							<td>Project State</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each = "project : ${projects}">
+							<td th:text = "${project.name}"></td>
+							<td th:text = "${project.description}"></td>
+							<td th:text = "${project.state.name()}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class = "employees">
+				<div class = "table-title">
+					<h3>All Employees</h3>
+				</div>
+				<table class = "table-fill">
+					<thead>
+						<tr>
+							<td>Employee Name</td>
+							<td>First Name</td>
+							<td>Last Name</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each = "employee : ${employees}">
+							<td th:text = "${employee.firstName}"></td>
+							<td th:text = "${employee.lastName}"></td>
+							<td th:text = "${employee.email}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		<hr>
-		<div class = "employees">
-			<h2>All Employees</h2>
-			<table>
-				<thead>
-					<tr>
-						<td>Employee Name</td>
-						<td>First Name</td>
-						<td>Last Name</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each = "employee : ${employees}">
-						<td th:text = "${employee.firstName}"></td>
-						<td th:text = "${employee.lastName}"></td>
-						<td th:text = "${employee.email}"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<footer th:replace = "layouts :: footer"></footer>
 	</body>
 </html>

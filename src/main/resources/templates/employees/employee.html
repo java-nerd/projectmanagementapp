@@ -3,6 +3,7 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>Create an Employee</title>
+		<link th:href = "@{/css/utils.css}" rel = "stylesheet">
 	</head>
 	<body>
 		<nav th:replace = "layouts :: navbar"></nav>
@@ -18,5 +19,6 @@
 			</label>
 			<input type = "submit" value = "Submit">
 		</form>
+		<footer th:replace = "layouts :: footer"></footer>
 	</body>
 </html>
