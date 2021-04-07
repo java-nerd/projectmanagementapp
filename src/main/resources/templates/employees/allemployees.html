@@ -8,25 +8,30 @@
 	<body>
 		<nav th:replace = "layouts :: navbar"></nav>
 		<div class = "employees">
-			<h2>All Employees</h2>
-			<div class = "table">
-				<table>
-					<thead>
-						<tr>
-							<td>Employee Name</td>
-							<td>First Name</td>
-							<td>Last Name</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each = "employee : ${employees}">
-							<td th:text = "${employee.firstName}"></td>
-							<td th:text = "${employee.lastName}"></td>
-							<td th:text = "${employee.email}"></td>
-						</tr>
-					</tbody>
-				</table>
+			<div class = "table-header">
+				<div class = "table-title">
+					<h3>All Employees</h3>
+				</div>
+				<div class = "button">
+					<button value = "New Employee">New Employee</button>
+				</div>
 			</div>
+			<table class = "table-fill">
+				<thead>
+					<tr>
+						<td>Employee Name</td>
+						<td>First Name</td>
+						<td>Last Name</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each = "employee : ${employees}">
+						<td th:text = "${employee.firstName}"></td>
+						<td th:text = "${employee.lastName}"></td>
+						<td th:text = "${employee.email}"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<footer th:replace = "layouts :: footer"></footer>
 	</body>
