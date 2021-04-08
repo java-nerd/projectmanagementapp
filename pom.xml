@@ -14,7 +14,10 @@
     <name>projectmanagement</name>
     <description>Spring Boot Project Management</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>16</java.version>
+        <sonar.projectKey>java-nerd_projectmanagementapp</sonar.projectKey>
+        <sonar.organization>java-nerd</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
