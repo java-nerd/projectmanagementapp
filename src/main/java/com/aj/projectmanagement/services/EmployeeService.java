@@ -13,6 +13,7 @@ public class EmployeeService {
 
 	@Autowired
 	public EmployeeService(EmployeeRepository employeeRepository) {
+		System.out.println("I am not used anywhere");
 		this.employeeRepository = employeeRepository;
 	}
 
