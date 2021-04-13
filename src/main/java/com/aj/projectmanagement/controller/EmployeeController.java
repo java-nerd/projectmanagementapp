@@ -1,7 +1,9 @@
 package com.aj.projectmanagement.controller;
 
 import com.aj.projectmanagement.domain.Employee;
+import com.aj.projectmanagement.dto.EmployeeDTO;
 import com.aj.projectmanagement.services.EmployeeService;
+import com.aj.projectmanagement.transformer.EmpTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +18,12 @@ import java.util.List;
 public class EmployeeController {
 
 	private final EmployeeService employeeService;
+	private final EmpTransformer empMapper;
 
 	@Autowired
-	public EmployeeController(EmployeeService employeeService) {
+	public EmployeeController(EmployeeService employeeService, EmpTransformer empMapper) {
 		this.employeeService = employeeService;
+		this.empMapper = empMapper;
 	}
 
 	@GetMapping
@@ -31,12 +35,13 @@ public class EmployeeController {
 
 	@GetMapping(value = "/new")
 	public String sayHello(Model model) {
-		model.addAttribute("employee", new Employee());
+		model.addAttribute("employee", new EmployeeDTO());
 		return "employees/employee";
 	}
 
 	@PostMapping(value = "/create")
-	public String saveProject(Employee employee) {
+	public String saveProject(EmployeeDTO employeeDTO) {
+		final Employee employee = empMapper.employeeDtoToEmployee(employeeDTO);
 		final Employee employee1 = employeeService.save(employee);
 		if (employee1 != null) {
 			return "redirect:/employees/new";
