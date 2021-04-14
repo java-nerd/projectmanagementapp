@@ -1,4 +1,5 @@
 @import "table.css";
+@import "form.css";
 
 :root {
     --main-color: grey;
@@ -60,4 +61,35 @@
     justify-content: center;
     align-items: center;
     column-gap: 30px;
+}
+
+.employees .table-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects .table-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 10px;
+    text-align: center;
+    border: 1px gray solid;
+    background-color: teal;
+    border-radius: 5px;
+}
+
+.button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.button a:hover {
+    cursor: pointer;
+    color: cadetblue;
 }

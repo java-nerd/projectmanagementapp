@@ -7,18 +7,26 @@
 	</head>
 	<body>
 		<nav th:replace = "layouts :: navbar"></nav>
-		<form th:action = "create" method = "post" th:object = "${employee}">
-			<label>First Name
-				<input type = "text" th:field = "${employee.firstName}">
-			</label>
-			<label>Last Name
-				<input type = "text" th:field = "${employee.lastName}">
-			</label>
-			<label>Email
-				<input type = "text" th:field = "${employee.email}">
-			</label>
-			<input type = "submit" value = "Submit">
-		</form>
+		<div class = "form-container">
+			<form th:action = "create" method = "post" th:object = "${employee}">
+				<div class = "form-item">
+					<label>First Name
+						<input type = "text" th:field = "${employee.firstName}">
+					</label>
+				</div>
+				<div class = "form-item">
+					<label>Last Name
+						<input type = "text" th:field = "${employee.lastName}">
+					</label>
+				</div>
+				<div class = "form-item">
+					<label>Email
+						<input type = "text" th:field = "${employee.email}">
+					</label>
+				</div>
+				<input type = "submit" value = "Submit">
+			</form>
+		</div>
 		<footer th:replace = "layouts :: footer"></footer>
 	</body>
 </html>
