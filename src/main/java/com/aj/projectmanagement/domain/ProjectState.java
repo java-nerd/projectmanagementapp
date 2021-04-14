@@ -1,7 +1,7 @@
 package com.aj.projectmanagement.domain;
 
 public enum ProjectState {
-	NOTSTARTED,
+	NOT_STARTED,
 	STARTED,
 	COMPLETED;
 }

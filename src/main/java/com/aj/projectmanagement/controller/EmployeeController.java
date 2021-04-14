@@ -41,7 +41,7 @@ public class EmployeeController {
 
 	@PostMapping(value = "/create")
 	public String saveProject(EmployeeDTO employeeDTO) {
-		final Employee employee = empMapper.employeeDtoToEmployee(employeeDTO);
+		final Employee employee = empMapper.toEmp(employeeDTO);
 		final Employee employee1 = employeeService.save(employee);
 		if (employee1 != null) {
 			return "redirect:/employees/new";

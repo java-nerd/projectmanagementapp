@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 @Mapper
 public interface ProjectTransformer {
-	ProjectDTO projectToProjectDTO(Project project);
+	ProjectDTO toDto(Project project);
 
-	Project projectDtoToProject(ProjectDTO projectDTO);
+	Project toProject(ProjectDTO projectDTO);
 }

@@ -1,15 +1,8 @@
 package com.aj.projectmanagement.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import javax.persistence.*;
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
 @Entity
 @Table(name = "project", schema = "demo")
 public class Project {
@@ -20,12 +13,44 @@ public class Project {
 	private String name;
 	private ProjectState state;
 
-	public Project() {
-	}
-
 	public Project(String description, String name, ProjectState state) {
 		this.description = description;
 		this.name = name;
+		this.state = state;
+	}
+
+	public Project() {
+	}
+
+	public int getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public ProjectState getState() {
+		return state;
+	}
+
+	public void setState(ProjectState state) {
 		this.state = state;
 	}
 

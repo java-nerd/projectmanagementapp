@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 @Mapper
 public interface EmpTransformer {
-	EmployeeDTO empToEmpDTO(Employee employee);
+	EmployeeDTO toDto(Employee employee);
 
-	Employee employeeDtoToEmployee(EmployeeDTO employeeDTO);
+	Employee toEmp(EmployeeDTO employeeDTO);
 }

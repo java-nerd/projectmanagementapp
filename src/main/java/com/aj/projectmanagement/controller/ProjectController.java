@@ -41,7 +41,7 @@ public class ProjectController {
 
 	@PostMapping(value = "/create")
 	public String saveProject(ProjectDTO projectDTO) {
-		final Project project = projectMapper.projectDtoToProject(projectDTO);
+		final Project project = projectMapper.toProject(projectDTO);
 		final Project savedProject = projectService.save(project);
 		if (savedProject != null) {
 			return "redirect:/projects/new";
